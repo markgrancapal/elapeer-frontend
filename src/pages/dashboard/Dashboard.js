@@ -35,8 +35,6 @@ class Dashboard extends React.Component {
     this.setState({...this.state, isFetching: true});
 
     try{
-      // stats=statsJson;
-      // cities=citiesJson
       stats = await fetch('https://api.elapeer.net/stats').then(response => response.json());
       cities = await fetch('https://api.elapeer.net/cities').then(response => response.json());
 
@@ -55,20 +53,6 @@ class Dashboard extends React.Component {
       isFetching: false
     })
   }
-
-  // loadingIndicator () {
-  //   return
-  //     (<div
-  //       style={{
-  //         width: "100%",
-  //         height: "100",
-  //         display: "flex",
-  //         justifyContent: "center",
-  //         alignItems: "center"
-  //       }}>
-    // <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
-  //   </div>)
-  // }
 
   render() {
     return (
