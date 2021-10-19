@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route} from 'react-router';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import '../styles/theme.scss';
 
@@ -10,11 +10,11 @@ class App extends React.PureComponent {
   render() {
     return (
         <div>
-            <HashRouter>
+            <BrowserRouter>
                 <Switch>
                     <Route path="/" exact component={Dashboard}/>
                 </Switch>
-            </HashRouter>
+            </BrowserRouter>
         </div>
 
     );
