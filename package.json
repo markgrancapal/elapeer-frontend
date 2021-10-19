@@ -85,7 +85,6 @@
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
     "react-loader-spinner": "^4.0.0",
-    "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-hash-link": "^1.2.2",
@@ -93,9 +92,6 @@
     "react-toastify": "^6.0.8",
     "react-transition-group": "^4.4.1",
     "reactstrap": "8.5.1",
-    "redux": "^4.0.1",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
     "rickshaw": "1.7.1",
     "tabler-icons": "^1.10.0"
   },

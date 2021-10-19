@@ -35,11 +35,10 @@ class Dashboard extends React.Component {
     this.setState({...this.state, isFetching: true});
 
     try{
-      // console.log(await fetch('http://128.199.140.102:3001/stats'));
+      // stats=statsJson;
+      // cities=citiesJson
       stats = await fetch('https://api.elapeer.net/stats').then(response => response.json());
       cities = await fetch('https://api.elapeer.net/cities').then(response => response.json());
-      // stats = statsJson;
-      // cities = citiesJson;
 
     } catch(e) {
       console.log('FETCHING ERROR: ' + e);
