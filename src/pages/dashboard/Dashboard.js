@@ -7,8 +7,8 @@ import Map from "./components/am4chartMap/am4chartMap";
 
 import s from "./Dashboard.module.scss";
 
-// import statsJson from "./stats.json";
-// import citiesJson from "./citynodescount.json";
+import statsJson from "./stats.json";
+import citiesJson from "./citynodescount.json";
 
 import logoWhite from "../../images/carrier-white-2.png";
 
@@ -35,8 +35,10 @@ class Dashboard extends React.Component {
     this.setState({...this.state, isFetching: true});
 
     try{
-      stats = await fetch('https://api.elapeer.net/stats').then(response => response.json());
-      cities = await fetch('https://api.elapeer.net/cities').then(response => response.json());
+      stats=statsJson;
+      cities=citiesJson;
+      // stats = await fetch('https://api.elapeer.net/stats').then(response => response.json());
+      // cities = await fetch('https://api.elapeer.net/cities').then(response => response.json());
 
     } catch(e) {
       console.log('FETCHING ERROR: ' + e);
@@ -92,11 +94,13 @@ class Dashboard extends React.Component {
                   <h6 className="name fw-semi-bold">Nodes</h6>
                 </Col>
               </Row>
-              {this.state.countries.map(country => 
-              <Row key={country.name}>
-                <Col><p className="value" >{country.name}</p></Col>
-                <Col><p className="value" >{country.total}</p></Col>
-              </Row>)}
+              <Col className="scroll">
+                {this.state.countries.map(country => 
+                <Row key={country.name}>
+                  <Col><p className="value" >{country.name}</p></Col>
+                  <Col><p className="value last" >{country.total}</p></Col>
+                </Row>)}
+              </Col>
             </Widget>
           </Col>
           <Col lg={1} />
@@ -110,11 +114,13 @@ class Dashboard extends React.Component {
                   <h6 className="name fw-semi-bold">Nodes</h6>
                 </Col>
               </Row>
+              <Col className="scroll">
               {this.state.cities.map(city => 
-              <Row key={city.name}>
-                <Col><p className="value" >{city.name}</p></Col>
-                <Col><p className="value" >{city.count}</p></Col>
-              </Row>)}
+                <Row key={city.name}>
+                  <Col><p className="value" >{city.name}</p></Col>
+                  <Col><p className="value last" >{city.count}</p></Col>
+                </Row>)}                
+              </Col>              
             </Widget>
           </Col>
         </Row>
