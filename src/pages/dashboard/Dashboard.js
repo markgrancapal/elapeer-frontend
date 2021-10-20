@@ -7,8 +7,8 @@ import Map from "./components/am4chartMap/am4chartMap";
 
 import s from "./Dashboard.module.scss";
 
-// import statsJson from "./stats.json";
-// import citiesJson from "./citynodescount.json";
+import statsJson from "./stats.json";
+import citiesJson from "./citynodescount.json";
 
 import logoWhite from "../../images/carrier-white-2.png";
 
@@ -35,8 +35,10 @@ class Dashboard extends React.Component {
     this.setState({...this.state, isFetching: true});
 
     try{
-      stats = await fetch('https://api.elapeer.net/stats').then(response => response.json());
-      cities = await fetch('https://api.elapeer.net/cities').then(response => response.json());
+      stats=statsJson;
+      cities=citiesJson;
+      // stats = await fetch('https://api.elapeer.net/stats').then(response => response.json());
+      // cities = await fetch('https://api.elapeer.net/cities').then(response => response.json());
 
     } catch(e) {
       console.log('FETCHING ERROR: ' + e);

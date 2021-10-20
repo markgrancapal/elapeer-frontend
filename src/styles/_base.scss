@@ -220,6 +220,15 @@
   //   border-left: none;
   // }
 }
+::-webkit-scrollbar{
+  background:lightgrey;
+}
+::-webkit-scrollbar-thumb {
+  background-color:#333867;
+}
+*{
+  scrollbar-color:#333867 lightgrey;
+}
 .scroll {
   max-height: 70vh;
   overflow-y: scroll;
